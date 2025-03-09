@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMOCRAFT's MiniHead Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="text-center p-8 flex justify-center items-center w-full flex-col">
+    <h1 class="text-2xl font-bold my-4">DEMOCRAFT's MiniHead Generator</h1>
+    <form method="GET" class="join w-96">
+        <input class="input join-item"  type="text" name="username" placeholder="Enter Minecraft Username" required>
+        <button class="btn btn-primary join-item"  type="submit">Generate Avatar</button>
+    </form>
+
+    {% if username %}
+        <fieldset class="fieldset w-xs bg-base-200 border border-base-300 p-4 rounded-box flex justify-center items-center flex-col">
+            <legend class="fieldset-legend">Avatar de {{ username }}</legend>
+            <img src="{{ avatar_url }}" alt="Minecraft Avatar">
+            <br>
+            <a class="btn btn-success" href="{{ avatar_url }}" download="avatar.png">
+                Download Avatar
+            </a>
+          </fieldset>
+    {% endif %}
+</body>
+</html>
