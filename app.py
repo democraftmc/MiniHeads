@@ -30,18 +30,18 @@ def create_avatar(head, top_head):
     
     # Draw black outline
     draw = ImageDraw.Draw(canvas)
-    outline_color = (0, 0, 0, 255)
+    outline_color = (1, 1, 1, 255)
     for x in range(12):
         for y in range(12):
-            if canvas.getpixel((x, y))[3] != 0 and canvas.getpixel((x - 1, y))[3] == 0 and canvas.getpixel((x, y)) != (0, 0, 0, 255):  # If not transparent
+            if canvas.getpixel((x, y))[3] != 0 and canvas.getpixel((x - 1, y))[3] == 0 and canvas.getpixel((x, y)) != (1, 1, 1, 255):  # If not transparent
                 draw.point((x - 1, y), outline_color)
             if x < 11:
-                if canvas.getpixel((x, y))[3] != 0 and canvas.getpixel((x + 1, y))[3] == 0 and canvas.getpixel((x, y)) != (0, 0, 0, 255):  # If not transparent
+                if canvas.getpixel((x, y))[3] != 0 and canvas.getpixel((x + 1, y))[3] == 0 and canvas.getpixel((x, y)) != (1, 1, 1, 255):  # If not transparent
                     draw.point((x + 1, y), outline_color)
-            if canvas.getpixel((x, y))[3] != 0 and canvas.getpixel((x, y - 1))[3] == 0 and canvas.getpixel((x, y)) != (0, 0, 0, 255):  # If not transparent
+            if canvas.getpixel((x, y))[3] != 0 and canvas.getpixel((x, y - 1))[3] == 0 and canvas.getpixel((x, y)) != (1, 1, 1, 255):  # If not transparent
                 draw.point((x, y - 1), outline_color)
             if y < 11:
-                if canvas.getpixel((x, y))[3] != 0 and canvas.getpixel((x, y + 1))[3] == 0 and canvas.getpixel((x, y)) != (0, 0, 0, 255):  # If not transparent
+                if canvas.getpixel((x, y))[3] != 0 and canvas.getpixel((x, y + 1))[3] == 0 and canvas.getpixel((x, y)) != (1, 1, 1, 255):  # If not transparent
                     draw.point((x, y + 1), outline_color)
 
     return canvas
